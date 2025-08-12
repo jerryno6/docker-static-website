@@ -17,6 +17,9 @@ WORKDIR /busybox
 # Copy the busybox build config (limited to httpd)
 COPY .config .
 
+# Copy the default static file
+COPY index.html .
+
 # Compile
 RUN make && ./make_single_applets.sh
 
