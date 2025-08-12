@@ -17,9 +17,6 @@ WORKDIR /busybox
 # Copy the busybox build config (limited to httpd)
 COPY .config .
 
-# Copy the default static file
-COPY index.html .
-
 # Compile
 RUN make && ./make_single_applets.sh
 
@@ -46,6 +43,9 @@ WORKDIR /home/static
 # and save the developer the need to override the CMD line in case they ever
 # want to use a httpd.conf
 COPY httpd.conf .
+
+# Copy the default static file
+COPY index.html .
 
 # Copy the static website
 # Use the .dockerignore file to control what ends up inside the image!
