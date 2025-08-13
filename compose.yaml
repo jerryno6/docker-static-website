@@ -1,0 +1,10 @@
+services:
+  httpd:
+    container_name: httpd
+    image: ledangvu/httpd
+    restart: always
+    ports:
+      - "3000:3000"
+    # volumes:
+      # - /some/local/path:/home/static
+      # - ./httpd.conf:/home/static/httpd.conf:ro
